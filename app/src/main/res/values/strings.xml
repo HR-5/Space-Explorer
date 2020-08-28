@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Space Explorer</string>
+    <string name="api_key">Kvcu4DRE6wyWC2FyHPmh44qF1tHbJav8nSqLNbdp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

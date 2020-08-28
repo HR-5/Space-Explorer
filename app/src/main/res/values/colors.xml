@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#070707</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="toolbar">#070707</color>
+    <color name="backc">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#1e63b9</color>
+    <color name="cardcolor">#111111</color>
+    <color name="carddrop">#222222</color>
+    <color name="lightback">#f8faf9</color>
+    <color name="lightToolbar">#FFFFFF</color>
+    <color name="lighttext">#212121</color>
+    <color name="lightcard">#FFFFFF</color>
+    <color name="lightcardDrop">#DDDDDD</color>
+    <color name="red">#D00000</color>
+</resources>
