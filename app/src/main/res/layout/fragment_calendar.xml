@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.MainActivity"
-        android:background="@drawable/backg"
+        android:background="@drawable/space"
         android:padding="15dp">
 
         <androidx.cardview.widget.CardView
@@ -18,6 +18,8 @@
             android:layout_width="400dp"
             android:layout_height="350dp"
             app:cardCornerRadius="15dp"
+            android:transitionName="cardview"
+            app:cardBackgroundColor="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +30,7 @@
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/carddrop"
+                android:background="@android:color/transparent"
                 android:dateTextAppearance="@style/CalenderViewWeekCustomText"
                 android:theme="@style/CalenderViewCustom"
                 android:weekDayTextAppearance="@style/CalenderViewDateCustomText"
@@ -46,10 +48,25 @@
             android:layout_marginTop="44dp"
             android:background="@drawable/round2"
             android:text="Set"
+            android:transitionName="btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/tcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Astronomy Picture Of The Day"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:transitionName="tcard"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

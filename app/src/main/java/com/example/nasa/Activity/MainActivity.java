@@ -1,7 +1,10 @@
 package com.example.nasa.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void search(){
         Intent intent = new Intent(this,SearchActivity.class);
-        startActivity(intent);
-        finish();
+        Pair pair = Pair.create((View) imageView,"search");
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, pair);
+        startActivity(intent,options.toBundle());
     }
 }

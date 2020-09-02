@@ -4,8 +4,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.TransitionInflater;
 
 import android.os.SystemClock;
 import android.view.LayoutInflater;
@@ -13,10 +16,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nasa.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 
@@ -27,6 +32,8 @@ public class CalendarFragment extends Fragment {
     Button set;
     CalendarView calendarView;
     Calendar calendar;
+    TextView tcard;
+    CardView cardView;
     public CalendarFragment() {
         // Required empty public constructor
     }
@@ -53,7 +60,11 @@ public class CalendarFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_calendar,container,false);
         set = (Button) view.findViewById(R.id.set);
         calendarView = (CalendarView) view.findViewById(R.id.calendarView);
+        tcard = (TextView) view.findViewById(R.id.tcard);
+        cardView = (CardView) view.findViewById(R.id.cardView);
         calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        date = simpleDateFormat.format(calendar.getTime());
         return view;
     }
 
@@ -82,7 +93,14 @@ public class CalendarFragment extends Fragment {
     }
     private void showImg(){
         ApodFragment fragment = ApodFragment.newInstance(date);
+        fragment.setSharedElementEnterTransition(TransitionInflater.from(getActivity()).inflateTransition(R.transition.trans));
+        fragment.setEnterTransition(TransitionInflater.from(getActivity()).inflateTransition(android.R.transition.move));
         getActivity().getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragContainer,fragment).commit();
+                .replace(R.id.fragContainer,fragment)
+                .addToBackStack("transaction")
+                .addSharedElement(set, "btn")
+                .addSharedElement(tcard,"tcard")
+                .addSharedElement(cardView,"cardview")
+                .commit();
     }
 }

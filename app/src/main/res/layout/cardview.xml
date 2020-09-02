@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:id="@+id/linear">
+    android:id="@+id/linear"
+    android:padding="2dp">
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/cardcolor"
-        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="#13EFEFF3"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,7 +32,7 @@
                 android:padding="5dp"
                 android:text="Title: "
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,11 +43,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-medium"
+                android:maxWidth="275dp"
                 android:padding="5dp"
+                android:transitionName="title"
+                android:justificationMode="inter_word"
                 android:text="Apollo 11 Overview"
                 android:textColor="@color/white"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/titlec"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/cardcons"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/titlec"

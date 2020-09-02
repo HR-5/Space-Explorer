@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -64,11 +66,15 @@ public class SearchFragment extends Fragment {
         searchView = (SearchView) view.findViewById(R.id.searchview);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         FragmentManager manager = getFragmentManager();
-        adapter = new Adapter(manager);
+        adapter = new Adapter(manager,getContext(),getActivity());
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
+        int resId = R.anim.anim_fall_down;
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(), resId);
+        recyclerView.setLayoutAnimation(animation);
         final GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.scheduleLayoutAnimation();
         return view;
     }
 
@@ -133,9 +139,5 @@ public class SearchFragment extends Fragment {
         });
     }
 
-    private void goback(){
-        CalendarFragment fragment = new CalendarFragment();
-        getFragmentManager().beginTransaction().replace(R.id.fragContainer,fragment)
-                .commit();
-    }
+
 }

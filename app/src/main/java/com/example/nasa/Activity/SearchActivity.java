@@ -30,6 +30,7 @@ public class SearchActivity extends AppCompatActivity {
     private void main(){
         Intent i = new Intent(this,MainActivity.class);
         startActivity(i);
+        overridePendingTransition(R.anim.fade_in,R.anim.fading_out);
     }
 
 }

@@ -9,18 +9,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
-        android:background="@drawable/backg">
+        android:background="@drawable/space">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="400dp"
             android:layout_height="400dp"
+            app:cardBackgroundColor="@color/cardcolor"
             app:cardCornerRadius="15dp"
+            android:transitionName="cardview"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.39">
+            app:layout_constraintVertical_bias="0.48000002">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,6 +33,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/cardcolor"
                     android:scaleType="centerCrop"
                     android:src="@drawable/loading"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -52,11 +55,43 @@
             android:layout_height="wrap_content"
             android:text="Back"
             android:background="@drawable/round2"
+            android:transitionName="btn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView2"
             app:layout_constraintVertical_bias="0.59000003" />
+
+        <TextView
+            android:id="@+id/tcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Astronomy Picture Of The Day"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:transitionName="tcard"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="02/09/2020"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:transitionName="title"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tcard" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
